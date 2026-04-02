@@ -1,14 +1,35 @@
 {
+
+
   "users": {
+    
+    "tim": {    
+      "skillLevels": {},
+      "weakAreas": [],
+      "history": [],  
+      "skills": {} },
+    "son": {    
+      "skillLevels": {},
+      "weakAreas": [],
+      "history": [], 
+      "skills": {} },
+    "daughter": {    
+      "skillLevels": {},
+      "weakAreas": [],
+      "history": [], 
+      "skills": {} },
+    
     "default": {
       "skillLevels": {},
       "weakAreas": [],
-      "history": []
+      "history": [],
+      "skills": {} 
     },
     "demo_user": {
       "skillLevels": {},
       "weakAreas": [],
-      "history": []
+      "history": [],
+      "skills": {} 
     }
   }
 }

@@ -9,6 +9,24 @@ function defaultMemory() {
   };
 }
 
+function getMemory(user) {
+  const data = JSON.parse(fs.readFileSync(FILE));
+  return data[user] || { skills: {} };
+}
+
+function updateMemory(user, skill, score) {
+  const data = JSON.parse(fs.readFileSync(FILE));
+
+  if (!data[user]) data[user] = { skills: {} };
+
+  data[user].skills[skill] = {
+    level: score,
+    lastReviewed: new Date().toISOString()
+  };
+
+  fs.writeFileSync(FILE, JSON.stringify(data, null, 2));
+}
+
 function loadMemory() {
   if (!fs.existsSync(MEMORY_PATH)) {
     saveMemory(defaultMemory());
@@ -22,4 +40,4 @@ function saveMemory(memory) {
   fs.writeFileSync(MEMORY_PATH, JSON.stringify(memory, null, 2));
 }
 
-module.exports = { loadMemory, saveMemory, defaultMemory, MEMORY_PATH };
+module.exports = { getMemory, updateMemory, loadMemory, saveMemory, defaultMemory, MEMORY_PATH };
