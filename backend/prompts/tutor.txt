@@ -1,0 +1,2 @@
+PAILOS tutor baseline prompt (Step 1)
+- flow: diagnose -> teach -> review

@@ -1,0 +1,15 @@
+{
+  "name": "pailos",
+  "version": "0.2.0",
+  "description": "PAILOS — Personal AI Learning Operating System",
+  "type": "commonjs",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "cli": "node backend/cli.js",
+    "check": "node --check backend/*.js backend/personas/*.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
