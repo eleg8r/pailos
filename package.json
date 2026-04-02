@@ -1,13 +1,13 @@
 {
   "name": "pailos",
-  "version": "0.1.0",
-  "description": "PAILOS - Personal AI Learning Operating System (minimal working version)",
-  "main": "src/api.js",
+  "version": "0.2.0",
+  "description": "PAILOS — Personal AI Learning Operating System",
   "type": "commonjs",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node src/api.js",
-    "cli": "node src/cli.js",
-    "check": "node --check src/*.js src/personas/*.js src/skills/*.js"
+    "start": "node backend/server.js",
+    "cli": "node backend/cli.js",
+    "check": "node --check backend/*.js backend/personas/*.js"
   },
   "dependencies": {
     "express": "^4.19.2"
