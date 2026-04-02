@@ -1,0 +1,14 @@
+{
+  "users": {
+    "default": {
+      "skillLevels": {},
+      "weakAreas": [],
+      "history": []
+    },
+    "demo_user": {
+      "skillLevels": {},
+      "weakAreas": [],
+      "history": []
+    }
+  }
+}
