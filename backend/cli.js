@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const { askClaude } = require('./claude');
 const { loadMemory } = require('./memory');
+const { pickNextSkill  } = require('./adaptive');
 
 async function main() {
   const sessionType = process.argv[2] || 'coding';
@@ -8,10 +9,15 @@ async function main() {
 
   const memory = loadMemory();
   const user = memory.users[userId] || { skillLevels: {}, weakAreas: [] };
+  
+  const nextSkill = pickNextSkill(memory);
 
   const reply = await askClaude({
     system: 'You are an AI tutor.',
-    prompt: `Start a ${sessionType} tutoring session using diagnose -> teach -> review. User weak areas: ${user.weakAreas.join(', ') || 'none'}.`
+    prompt: `
+            Focus skill: ${nextSkill} 
+            
+            Start a ${sessionType} tutoring session using diagnose -> teach -> review. User weak areas: ${user.weakAreas.join(', ') || 'none'}.`
   });
 
   console.log(`PAILOS CLI`);
